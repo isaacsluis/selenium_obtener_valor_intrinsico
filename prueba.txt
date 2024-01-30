@@ -1,0 +1,27 @@
+#stock-header > div > div.p-h-xl.ps-h-lg.p-t-lg.ps-v-md.p-b-md.summary-section > div > div.flex-auto > div.flex.m-t-md > div > div.flex.flex-align-start > div.m-r-sm > div > h1
+
+#stock-header > div > div.p-h-xl.ps-h-lg.p-t-lg.ps-v-md.p-b-md.summary-section > div > div.flex-auto > div.flex.m-t-md > div > div.flex.flex-align-start > div.m-r-sm > div > h1
+
+print(soup.find('h1', class_='t-h5').text)
+
+h1[class='t-h5']
+
+
+## para guias
+
+elemento = wait.until(ec.visibility_of_element_located((By.NAME, 'username')))
+elemento.send_keys(USER_GI) ### para enviar texto en input
+
+### damos click al boton
+elemento = wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']")))
+elemento.click()
+
+### para localizar
+elemento = wait.until(ec.visibility_of_element_located((By.XPATH, "//span[contains(text(),'from Meta')]")))
+
+##### funcion que trae los datos que necesito para el proyecto
+def stock_precio():
+    ## trae el nombre y el precio de la acion
+    print(soup.find('h1', class_='t-h5').text)
+    ## tiene una logica de lipiador replace remplaza el los valores y strip() quita espacion y enters
+    print(soup.find('span', class_='bold t-body-lg').text.replace('$', "").strip()) 
